@@ -74,18 +74,16 @@ async function createGallery(e) {
     Notiflix.Notify.success(
       `Wow, you have got the ${getRequestService.total} results!!!`
     );
-  }
-  if (getRequestService.arrLength === 0) {
-    return Notiflix.Notify.failure(
-      'Sorry, there are no images matching your search query. Please try again.'
-    );
-  }
-  if (
+  } else if (
     getRequestService.length >= getRequestService.total &&
     getRequestService.total !== 0
   ) {
     return Notiflix.Notify.warning(
       "We're sorry, but you've reached the end of search results."
+    );
+  } else if (getRequestService.arrLength === 0) {
+    return Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
     );
   }
 }
