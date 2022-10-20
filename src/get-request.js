@@ -25,11 +25,6 @@ export default class GetRequestService {
         this.total = response.data.totalHits;
         this.page += 1;
         this.length += images.length;
-        if (images.length > 0) {
-          Notiflix.Notify.success(
-            `Wow, you have got the ${this.total} results!!!`
-          );
-        }
         if (images.length === 0) {
           return Notiflix.Notify.failure(
             'Sorry, there are no images matching your search query. Please try again.'

@@ -67,13 +67,14 @@ async function getImages() {
   clearContainer();
   getRequestService.resetPage();
   getRequestService.val = refs.input.value;
-  let images = [];
   return (images = await getRequestService.getCards());
 }
 
 async function createGallery(e) {
   e.preventDefault();
   await getImages().then(renderCards).catch(console.log);
-
+  if (images.length > 0) {
+    Notiflix.Notify.success(`Wow, you have got the ${this.total} results!!!`);
+  }
   observer.observe(refs.trigger);
 }
