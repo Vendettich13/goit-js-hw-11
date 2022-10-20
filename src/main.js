@@ -45,6 +45,14 @@ function allowToSearch() {
 
 async function loadingImages() {
   await getRequestService.getCards().then(renderCards).catch(console.log);
+  if (
+    getRequestService.length >= getRequestService.total &&
+    getRequestService.total !== 0
+  ) {
+    return Notiflix.Notify.warning(
+      "We're sorry, but you've reached the end of search results."
+    );
+  }
 }
 
 async function renderCards(images) {
@@ -73,13 +81,6 @@ async function createGallery(e) {
   if (getRequestService.arrLength > 0) {
     Notiflix.Notify.success(
       `Wow, you have got the ${getRequestService.total} results!!!`
-    );
-  } else if (
-    getRequestService.length >= getRequestService.total &&
-    getRequestService.total !== 0
-  ) {
-    return Notiflix.Notify.warning(
-      "We're sorry, but you've reached the end of search results."
     );
   } else if (getRequestService.arrLength === 0) {
     return Notiflix.Notify.failure(
