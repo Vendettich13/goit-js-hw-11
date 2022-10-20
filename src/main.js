@@ -74,7 +74,9 @@ async function createGallery(e) {
   e.preventDefault();
   await getImages().then(renderCards).catch(console.log);
   if (getRequestService.arrLength > 0) {
-    Notiflix.Notify.success(`Wow, you have got the ${this.total} results!!!`);
+    Notiflix.Notify.success(
+      `Wow, you have got the ${getRequestService.total} results!!!`
+    );
   }
   observer.observe(refs.trigger);
 }
