@@ -1,5 +1,4 @@
 import axios from 'axios';
-import Notiflix from 'notiflix';
 export default class GetRequestService {
   constructor() {
     this.value = '';
@@ -26,12 +25,7 @@ export default class GetRequestService {
         this.arrLength = images.length;
         this.total = response.data.totalHits;
         this.page += 1;
-        this.length += images.length;
-        if (this.arrLength === 0) {
-          return Notiflix.Notify.failure(
-            'Sorry, there are no images matching your search query. Please try again.'
-          );
-        }
+        this.length += this.arrLength;
         return images;
       })
       .catch(error => {

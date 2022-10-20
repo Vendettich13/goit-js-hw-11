@@ -79,5 +79,10 @@ async function createGallery(e) {
       `Wow, you have got the ${getRequestService.total} results!!!`
     );
   }
+  if (this.arrLength === 0) {
+    return Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
+  }
   observer.observe(refs.trigger);
 }
