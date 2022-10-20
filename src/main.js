@@ -45,10 +45,7 @@ function allowToSearch() {
 
 async function loadingImages() {
   await getRequestService.getCards().then(renderCards).catch(console.log);
-  if (
-    getRequestService.length >= getRequestService.total &&
-    getRequestService.length !== 0
-  ) {
+  if (getRequestService.length >= getRequestService.total) {
     return Notiflix.Notify.warning(
       "We're sorry, but you've reached the end of search results."
     );
