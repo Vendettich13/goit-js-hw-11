@@ -74,6 +74,7 @@ async function getImages() {
 async function createGallery(e) {
   e.preventDefault();
   await getImages().then(renderCards).catch(console.log);
+  observer.observe(refs.trigger);
   if (getRequestService.arrLength > 0) {
     return Notiflix.Notify.success(
       `Wow, you have got the ${getRequestService.total} results!!!`
@@ -84,5 +85,4 @@ async function createGallery(e) {
       'Sorry, there are no images matching your search query. Please try again.'
     );
   }
-  observer.observe(refs.trigger);
 }
