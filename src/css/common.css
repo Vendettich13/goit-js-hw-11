@@ -49,6 +49,7 @@ button {
 }
 .container {
     width: 100%;
+    margin: 0 15px;
 }
 .search-box {
 margin-bottom: 20px;
