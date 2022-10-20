@@ -7,6 +7,7 @@ export default class GetRequestService {
     this.maxPage = 13;
     this.total = 0;
     this.length = 0;
+    this.arrLength = 0;
   }
 
   async getCards() {
@@ -22,10 +23,11 @@ export default class GetRequestService {
       })
       .then(response => {
         const images = response.data.hits;
+        this.arrLength = images.length;
         this.total = response.data.totalHits;
         this.page += 1;
         this.length += images.length;
-        if (images.length === 0) {
+        if (this.arrLength === 0) {
           return Notiflix.Notify.failure(
             'Sorry, there are no images matching your search query. Please try again.'
           );
