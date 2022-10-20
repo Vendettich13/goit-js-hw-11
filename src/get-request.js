@@ -27,7 +27,7 @@ export default class GetRequestService {
         this.length += images.length;
         if (images.length > 0) {
           Notiflix.Notify.success(
-            `Wow, you have got the ${getRequestService.total} results!!!`
+            `Wow, you have got the ${this.total} results!!!`
           );
         }
         if (images.length === 0) {
