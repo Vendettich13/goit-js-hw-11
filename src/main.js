@@ -67,7 +67,8 @@ async function getImages() {
   clearContainer();
   getRequestService.resetPage();
   getRequestService.val = refs.input.value;
-  return (images = await getRequestService.getCards());
+  let images = await getRequestService.getCards();
+  return images;
 }
 
 async function createGallery(e) {
