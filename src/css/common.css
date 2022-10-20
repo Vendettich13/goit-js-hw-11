@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f2f0f2;
+    color: #212121;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: #212121;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+}
+button {
+    padding: 0;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 15px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.info {
+    display: flex;
+    border: 1 solid #bdf3c3;
+    border-top: 0;
+    height: 50px;
+}
+.container {
+    width: 100%;
+}
+.search-box {
+margin-bottom: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80px;
+
+box-shadow: 0 3px 9px -6px #248040;
+background-color: #a6cfaa;
+}
+.search-form input {
+    position: relative;
+    height: 50px;
+    width: 300px;
+    padding: 0 0 0 20px;
+    
+    font-size: 18px;
+    
+    border-radius: 10px;
+    box-shadow: 0 0 15px #378721;
+    border: 1 solid #0be108;
+}
+.search-form input:hover,
+.search-form input:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+.search-form button {
+    height: 50px;
+    
+    font-size: 18px;
+    padding: 0 10px;
+    
+    background-color: white;
+    box-shadow: 0 0 15px #378721;
+    border-radius: 10px;
+    border: 1 solid #0be108;
+
+    transition: transform cubic-bezier(0.215, 0.610, 0.355, 1) 500ms;
+}
+.search-form button:hover, 
+.search-form button:focus {
+    transform: scale(1.1);
+    outline: 0;
+    outline-offset: 0;
+}
+.search-form input:placeholder-shown {
+    font-size: 18px;
+}
+.photo-card {
+    height: 250px;
+    width: auto;
+
+    box-shadow: 0 0 10px #a6cfaa;
+}
+.info-item {
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 14px;
+
+    font-weight: bold;
+    text-align: center;
+}
